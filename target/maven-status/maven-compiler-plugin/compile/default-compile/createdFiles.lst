@@ -1,0 +1,8 @@
+org\selflearning\msa\dto\OrderDTO.class
+org\selflearning\msa\dto\UserDTO.class
+org\selflearning\msa\service\impl\AggregatorServiceImpl.class
+org\selflearning\msa\AggregatorApplication.class
+org\selflearning\msa\dto\OrderDetailsDTO.class
+org\selflearning\msa\dto\ResultDTO.class
+org\selflearning\msa\controller\AggregatorController.class
+org\selflearning\msa\service\AggregatorService.class

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagp-aggregator-deployment
+  labels:
+    app: nagp-aggregator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nagp-aggregator  
+  template:
+    metadata:
+      labels:
+        app: nagp-aggregator
+    spec: 
+      containers:
+      - name: nagp-aggregator
+        image: jagratigoyal/ass3aggregator:tag2
+        env:
+         - name: USER_URL
+           valueFrom:
+            configMapKeyRef:
+             name: app-env-config-url
+             key: user.url
+         - name: ORDER_URL
+           valueFrom:
+            configMapKeyRef:
+             name: app-env-config-url
+             key: order.url
+         - name: JAEGER_HOST
+           valueFrom:
+            configMapKeyRef:
+             name: app-env-config-url
+             key: JAEGER_HOST         
+        ports:
+        - containerPort: 8099
